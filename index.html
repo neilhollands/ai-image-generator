@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Image Generator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>AI Image Generator</h1>
+      <p class="subtitle">Type a prompt and generate an image with OpenAI.</p>
+
+      <form id="image-form" class="card">
+        <label for="prompt">Prompt</label>
+        <textarea
+          id="prompt"
+          name="prompt"
+          rows="4"
+          placeholder="Example: A watercolor painting of a lighthouse during a storm"
+          required
+        ></textarea>
+
+        <button id="generate-btn" type="submit">Generate image</button>
+      </form>
+
+      <section class="card output">
+        <p id="status" aria-live="polite">Ready.</p>
+        <img id="result-image" alt="Generated image preview" />
+      </section>
+    </main>
+
+    <script src="./src/config.js"></script>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

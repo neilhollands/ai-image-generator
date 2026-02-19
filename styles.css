@@ -1,0 +1,91 @@
+:root {
+  --bg: #f2f7fb;
+  --text: #11233a;
+  --card: #ffffff;
+  --border: #c9d8e8;
+  --accent: #0d7cbf;
+  --accent-strong: #0a5d8f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top, #ffffff 0%, var(--bg) 55%);
+}
+
+.app {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 32px 16px 56px;
+  display: grid;
+  gap: 16px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0;
+}
+
+.card {
+  display: grid;
+  gap: 12px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+textarea {
+  width: 100%;
+  font: inherit;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  resize: vertical;
+}
+
+button {
+  width: fit-content;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font: inherit;
+  color: #ffffff;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: progress;
+}
+
+button:hover:not(:disabled) {
+  background: var(--accent-strong);
+}
+
+.output p {
+  margin: 0;
+}
+
+#result-image {
+  width: 100%;
+  min-height: 280px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding-top: 20px;
+  }
+}
