@@ -1,3 +1,3 @@
 window.APP_CONFIG = {
-  apiBaseUrl: "https://ai-image-generator-e72i.onrender.com"
+  apiBaseUrl: "https://ai-image-generator-e72i.onrender.com/"
 };
