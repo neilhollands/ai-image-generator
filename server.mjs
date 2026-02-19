@@ -13,11 +13,8 @@ const client = new OpenAI({
 });
 
 app.use(express.json({ limit: "1mb" }));
-app.use(
-  cors({
-    origin: "https://neilhollands.github.io",
-  })
-);
+app.use(cors({ origin: "*" }));
+app.options("*", cors({ origin: "*" }));
 
 app.get("/health", (_req, res) => {
   res.json({ ok: true });
@@ -38,9 +35,7 @@ app.post("/api/generate-image", async (req, res) => {
     if (!imageData) return res.status(502).json({ error: "No image returned by OpenAI." });
 
     if (imageData.url) return res.json({ imageUrl: imageData.url });
-    if (imageData.b64_json) {
-      return res.json({ imageUrl: `data:image/png;base64,${imageData.b64_json}` });
-    }
+    if (imageData.b64_json) return res.json({ imageUrl: `data:image/png;base64,${imageData.b64_json}` });
 
     return res.status(502).json({ error: "Unsupported OpenAI response format." });
   } catch (error) {
