@@ -25,6 +25,11 @@ app.get("/health", (_req, res) => {
   res.json({ ok: true });
 });
 
+
+app.get("/health", (_req, res) => {
+  res.json({ ok: true });
+});
+
 app.post("/api/generate-image", async (req, res) => {
   try {
     const prompt = String(req.body?.prompt || "").trim();
